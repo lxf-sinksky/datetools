@@ -85,12 +85,31 @@ public class DateCalculate {
     }
 
     /**
+     * 日期相差秒数
+     * @param date 比较的日期
+     * @return 日期相差秒数
+     */
+    public long pastSeconds(Date date) {
+        return (date.getTime() - this.date.getTime()) / 1000;
+    }
+
+    /**
      * 日期相差分钟数
      * @return 日期相差分钟数
      */
     public long pastMinutes() {
         return pastSeconds() / 60;
     }
+
+    /**
+     * 日期相差分钟数
+     * @param date 比较的日期
+     * @return 日期相差分钟数
+     */
+    public long pastMinutes(Date date) {
+        return pastSeconds(date) / 60;
+    }
+
 
     /**
      * 日期相差小时数
@@ -101,12 +120,32 @@ public class DateCalculate {
     }
 
     /**
+     * 日期相差小时数
+     * @param date 比较的日期
+     * @return 日期相差小时数
+     */
+    public long pastHours(Date date) {
+        return pastMinutes(date) / 60;
+    }
+
+
+    /**
      * 日期相差天数
      * @return 日期相差天数
      */
     public long pastDays() {
         return pastHours() / 24;
     }
+
+    /**
+     * 日期相差天数
+     * @param date 比较的日期
+     * @return 日期相差天数
+     */
+    public long pastDays(Date date) {
+        return pastHours(date) / 24;
+    }
+
 
     /**
      * 日期相差月数
@@ -117,12 +156,32 @@ public class DateCalculate {
     }
 
     /**
+     * 日期相差月数
+     * @param date 比较的日期
+     * @return 日期相差月数
+     */
+    public long pastMonths(Date date) {
+        return pastDays(date) / 30;
+    }
+
+
+    /**
      * 日期相差年数
      * @return 日期相差年数
      */
     public long pastYears() {
         return pastMonths() / 12;
     }
+
+    /**
+     * 日期相差年数
+     * @param date 比较的日期
+     * @return 日期相差年数
+     */
+    public long pastYears(Date date) {
+        return pastMonths(date) / 12;
+    }
+
 
     /**
      * 日期相差详情
@@ -132,50 +191,51 @@ public class DateCalculate {
         return past(false);
     }
 
+
     /**
      * 日期相差详情
      * @param isOmit 是否省略
      * @return 日期相差详情
      */
     public String past(boolean isOmit) {
-        StringBuffer sb = new StringBuffer();
+        StringBuilder sb = new StringBuilder();
         if (pastYears() > 0 ) {
-            sb.append(pastYears() + "年");
+            sb.append(pastYears()).append("年");
             if (isOmit) {
                 sb.append("前");
                 return sb.toString();
             }
         }
         if (pastMonths() % 12 > 0) {
-            sb.append(pastMonths() % 12 + "月");
+            sb.append(pastMonths() % 12).append("月");
             if (isOmit) {
                 sb.append("前");
                 return sb.toString();
             }
         }
         if (pastDays() % 30 > 0) {
-            sb.append(pastDays() % 30 + "天");
+            sb.append(pastDays() % 30).append("天");
             if (isOmit) {
                 sb.append("前");
                 return sb.toString();
             }
         }
         if (pastHours() % 24 > 0) {
-            sb.append(pastHours() % 24 + "小时");
+            sb.append(pastHours() % 24).append("小时");
             if (isOmit) {
                 sb.append("前");
                 return sb.toString();
             }
         }
         if (pastMinutes() % 60 > 0) {
-            sb.append(pastMinutes() % 60 + "分钟");
+            sb.append(pastMinutes() % 60).append("分钟");
             if (isOmit) {
                 sb.append("前");
                 return sb.toString();
             }
         }
         if (pastSeconds() % 60 > 0) {
-            sb.append(pastSeconds() % 60 + "秒");
+            sb.append(pastSeconds() % 60).append("秒");
             if (isOmit) {
                 sb.append("前");
                 return sb.toString();
@@ -183,4 +243,58 @@ public class DateCalculate {
         }
         return sb.toString();
     }
+
+    /**
+     * 日期相差详情
+     * @param date 比较的日期
+     * @param isOmit 是否省略
+     * @return 日期相差详情
+     */
+    public String past(Date date, boolean isOmit) {
+        StringBuilder sb = new StringBuilder();
+        if (pastYears(date) > 0 ) {
+            sb.append(pastYears(date)).append("年");
+            if (isOmit) {
+                sb.append("前");
+                return sb.toString();
+            }
+        }
+        if (pastMonths(date) % 12 > 0) {
+            sb.append(pastMonths(date) % 12).append("月");
+            if (isOmit) {
+                sb.append("前");
+                return sb.toString();
+            }
+        }
+        if (pastDays(date) % 30 > 0) {
+            sb.append(pastDays(date) % 30).append("天");
+            if (isOmit) {
+                sb.append("前");
+                return sb.toString();
+            }
+        }
+        if (pastHours(date) % 24 > 0) {
+            sb.append(pastHours(date) % 24).append("小时");
+            if (isOmit) {
+                sb.append("前");
+                return sb.toString();
+            }
+        }
+        if (pastMinutes(date) % 60 > 0) {
+            sb.append(pastMinutes(date) % 60).append("分钟");
+            if (isOmit) {
+                sb.append("前");
+                return sb.toString();
+            }
+        }
+        if (pastSeconds(date) % 60 > 0) {
+            sb.append(pastSeconds(date) % 60).append("秒");
+            if (isOmit) {
+                sb.append("前");
+                return sb.toString();
+            }
+        }
+        return sb.toString();
+    }
+
 }

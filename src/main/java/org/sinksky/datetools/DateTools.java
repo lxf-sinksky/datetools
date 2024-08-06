@@ -564,34 +564,113 @@ public interface DateTools {
      * 将DateTools对象中存储的时间转换为DateProperty对象
      * <br>
      * DateProperty对象包含了一系列的日期属性方法
-     * <ul>
-     *     <li>.prop().getYearString() -> String : 获取年份字符串</li>
-     *     <li>.prop().getYear() -> int : 获取年份</li>
-     *     <li>.prop().getMonthString() -> String : 获取月份字符串</li>
-     *     <li>.prop().getMonth() -> int : 获取月份</li>
-     *     <li>.prop().getDayString() -> String : 获取月份的天数字符串</li>
-     *     <li>.prop().getDay() -> int : 获取月份的天数</li>
-     *     <li>.prop().getHourString() -> String : 获取小时字符串（24小时制）</li>
-     *     <li>.prop().getHour() -> int : 获取小时（24小时制）</li>
-     *     <li>.prop().get12HourString() -> String : 获取小时字符串（12小时制）</li>
-     *     <li>.prop().get12Hour() -> int : 获取小时（12小时制）</li>
-     *     <li>.prop().getAmPmMarker() -> String : 获取AM/PM标识（上午 / 下午）</li>
-     *     <li>.prop().getAmPmMarkerEN() -> String : 获取AM/PM标识（AM / MP）</li>
-     *     <li>.prop().getMinuteString() -> String : 获取分钟字符串</li>
-     *     <li>.prop().getMinute() -> int : 获取分钟</li>
-     *     <li>.prop().getSecondString() -> String : 获取秒钟字符串</li>
-     *     <li>.prop().getSecond() -> int : 获取秒钟</li>
-     *     <li>.prop().getMillisecondString() -> String : 获取毫秒字符串</li>
-     *     <li>.prop().getMillisecond() -> int : 获取毫秒</li>
-     *     <li>.prop().getWeekString() -> String : 获取今日是周几</li>
-     *     <li>.prop().getWeek() -> int : 获取今日是周几（数字）</li>
-     *     <li>.prop().getDayOfYear() -> int : 获取一年中的第几天</li>
-     *     <li>.prop().getDayOfMonth() -> int : 获取一月中的第几天</li>
-     *     <li>.prop().getDayOfWeek() -> int : 获取一周中的第几天</li>
-     *     <li>.prop().getWeekOfYear() -> int : 获取一年中的第几周</li>
-     *     <li>.prop().getWeekOfMonth() -> int : 获取一月中的第几周</li>
-     *     <li>.prop().isLeapYear() -> boolean : 判断是否是闰年</li>
-     * </ul>
+     * <br>
+     * <Table>
+     *     <tr>
+     *         <td>.prop().getYear() -> int</td>
+     *         <td>获取年份</td>
+     *     </tr>
+     *     <tr>
+     *         <td>.prop().getYearString() -> String</td>
+     *         <td>获取年份字符串</td>
+     *     </tr>
+     *     <tr>
+     *         <td>.prop().getMonth() -> int</td>
+     *         <td>获取月份</td>
+     *     </tr>
+     *     <tr>
+     *         <td>.prop().getMonthString() -> String</td>
+     *         <td>获取月份字符串</td>
+     *     </tr>
+     *     <tr>
+     *         <td>.prop().getDay() -> int</td>
+     *         <td>获取月份的天数</td>
+     *     </tr>
+     *     <tr>
+     *         <td>.prop().getDayString() -> String</td>
+     *         <td>获取月份的天数字符串</td>
+     *     </tr>
+     *     <tr>
+     *         <td>.prop().getHour() -> int</td>
+     *         <td>获取小时（24小时制）</td>
+     *     </tr>
+     *     <tr>
+     *         <td>.prop().getHourString() -> String</td>
+     *         <td>获取小时字符串（24小时制）</td>
+     *     </tr>
+     *     <tr>
+     *         <td>.prop().get12Hour() -> int</td>
+     *         <td>获取小时（12小时制）</td>
+     *     </tr>
+     *     <tr>
+     *         <td>.prop().get12HourString() -> String</td>
+     *         <td>获取小时字符串（12小时制）</td>
+     *     </tr>
+     *     <tr>
+     *         <td>.prop().getAmPmMarker() -> String</td>
+     *         <td>获取AM/PM标识（上午 / 下午）</td>
+     *     </tr>
+     *     <tr>
+     *         <td>.prop().getAmPmMarkerEN() -> String</td>
+     *         <td>获取AM/PM标识（AM / MP）</td>
+     *     </tr>
+     *     <tr>
+     *         <td>.prop().getMinute() -> int</td>
+     *         <td>获取分钟</td>
+     *     </tr>
+     *     <tr>
+     *         <td>.prop().getMinuteString() -> String</td>
+     *         <td>获取分钟字符串</td>
+     *     </tr>
+     *     <tr>
+     *         <td>.prop().getSecond() -> int</td>
+     *         <td>获取秒钟</td>
+     *     </tr>
+     *     <tr>
+     *         <td>.prop().getSecondString() -> String</td>
+     *         <td>获取秒钟字符串</td>
+     *     </tr>
+     *     <tr>
+     *         <td>.prop().getMillisecond() -> int</td>
+     *         <td>获取毫秒</td>
+     *     </tr>
+     *     <tr>
+     *         <td>.prop().getMillisecondString() -> String</td>
+     *         <td>获取毫秒字符串</td>
+     *     </tr>
+     *     <tr>
+     *         <td>.prop().getWeek() -> int</td>
+     *         <td>获取今日是周几（数字）</td>
+     *     </tr>
+     *     <tr>
+     *         <td>.prop().getWeekString() -> String</td>
+     *         <td>获取今日是周几</td>
+     *     </tr>
+     *     <tr>
+     *         <td>.prop().getDayOfYear() -> int</td>
+     *         <td>获取一年中的第几天</td>
+     *     </tr>
+     *     <tr>
+     *         <td>.prop().getDayOfMonth() -> int</td>
+     *         <td>获取一月中的第几天</td>
+     *     </tr>
+     *     <tr>
+     *         <td>.prop().getDayOfWeek() -> int</td>
+     *         <td>获取一周中的第几天</td>
+     *     </tr>
+     *     <tr>
+     *         <td>.prop().getWeekOfYear() -> int</td>
+     *         <td>获取一年中的第几周</td>
+     *     </tr>
+     *     <tr>
+     *         <td>.prop().getWeekOfMonth() -> int</td>
+     *         <td>获取一月中的第几周</td>
+     *     </tr>
+     *     <tr>
+     *         <td>.prop().isLeapYear() -> boolean</td>
+     *         <td>判断是否是闰年</td>
+     *     </tr>
+     * </Table>
      */
     DateProperty prop();
 
@@ -599,17 +678,44 @@ public interface DateTools {
      * 将DateTools转换成DateExtend对象
      * <br>
      * DateExtend对象包含了一系列的日期扩展方法
-     * <ul>
-     *     <li>.extend().startOfDay() -> DateTools : 获取今日的开始时间</li>
-     *     <li>.extend().endOfDay() -> DateTools : 获取今日的结束时间</li>
-     *     <li>.extend().startOfMonth() -> DateTools : 获取本月的第一天</li>
-     *     <li>.extend().endOfMonth() -> DateTools : 获取本月的最后一天</li>
-     *     <li>.extend().startOfWeek() -> DateTools : 获取本周的第一天</li>
-     *     <li>.extend().endOfWeekWork() -> DateTools : 获取本周工作日的最后一天</li>
-     *     <li>.extend().endOfWeek() -> DateTools : 获取本周的最后一天</li>
-     *     <li>.extend().startOfYear() -> DateTools : 获取本年的第一天</li>
-     *     <li>.extend().endOfYear() -> DateTools : 获取本年的最后一天</li>
-     * </ul>
+     * <Table>
+     *     <tr>
+     *         <td>.extend().startOfDay() -> DateTools</td>
+     *         <td>获取今日的开始时间</td>
+     *     </tr>
+     *     <tr>
+     *         <td>.extend().endOfDay() -> DateTools</td>
+     *         <td>获取今日的结束时间</td>
+     *     </tr>
+     *     <tr>
+     *         <td>.extend().startOfMonth() -> DateTools</td>
+     *         <td>获取本月的第一天</td>
+     *     </tr>
+     *     <tr>
+     *         <td>.extend().endOfMonth() -> DateTools</td>
+     *         <td>获取本月的最后一天</td>
+     *     </tr>
+     *     <tr>
+     *         <td>.extend().startOfWeek() -> DateTools</td>
+     *         <td>获取本周的第一天</td>
+     *     </tr>
+     *     <tr>
+     *         <td>.extend().endOfWeekWork() -> DateTools</td>
+     *         <td>获取本周工作日的最后一天</td>
+     *     </tr>
+     *     <tr>
+     *         <td>.extend().endOfWeek() -> DateTools</td>
+     *         <td>获取本周的最后一天</td>
+     *     </tr>
+     *     <tr>
+     *         <td>.extend().startOfYear() -> DateTools</td>
+     *         <td>获取本年的第一天</td>
+     *     </tr>
+     *     <tr>
+     *         <td>.extend().endOfYear() -> DateTools</td>
+     *         <td>获取本年的最后一天</td>
+     *     </tr>
+     * </Table>
      */
     DateExtend extend();
 
@@ -617,22 +723,92 @@ public interface DateTools {
      * 将DateTools转换成DateCalculate对象，
      * <br>
      * DateCalculate对象包含了一系列的日期计算方法
-     * <ul>
-     *     <li>.calc().before(Date date) -> boolean : 是否在某个日期之前</li>
-     *     <li>.calc().before(Long date) -> boolean : 是否在某个日期之前</li>
-     *     <li>.calc().after(Date date) -> boolean : 是否在某个日期之后</li>
-     *     <li>.calc().after(Long date) -> boolean : 是否在某个日期之后</li>
-     *     <li>.calc().between(Date startDate, Date endDate) -> boolean : 是否在两个日期之间</li>
-     *     <li>.calc().between(Long startDate, Long endDate) -> boolean : 是否在两个日期之间</li>
-     *     <li>.calc().pastSeconds() -> long : 日期相差秒数</li>
-     *     <li>.calc().pastMinutes() -> long : 日期相差分钟数</li>
-     *     <li>.calc().pastHours() -> long : 日期相差小时数</li>
-     *     <li>.calc().pastDays() -> long : 日期相差天数</li>
-     *     <li>.calc().pastMonths() -> long : 日期相差月数</li>
-     *     <li>.calc().pastYears() -> long : 日期相差年数</li>
-     *     <li>.calc().past(boolean isOmit) -> String : 日期相差字符串详情</li>
-     * </ul>
-     *
+     * <Table>
+     *     <tr>
+     *         <td>.calc().before(Date date) -> boolean</td>
+     *         <td>是否在某个日期之前</td>
+     *     </tr>
+     *     <tr>
+     *         <td>.calc().before(Long date) -> boolean</td>
+     *         <td>是否在某个日期之前</td>
+     *     </tr>
+     *     <tr>
+     *         <td>.calc().after(Date date) -> boolean</td>
+     *         <td>是否在某个日期之后</td>
+     *     </tr>
+     *     <tr>
+     *         <td>.calc().after(Long date) -> boolean</td>
+     *         <td>是否在某个日期之后</td>
+     *     </tr>
+     *     <tr>
+     *         <td>.calc().between(Date startDate, Date endDate) -> boolean</td>
+     *         <td>是否在两个日期之间</td>
+     *     </tr>
+     *     <tr>
+     *         <td>.calc().between(Long startDate, Long endDate) -> boolean</td>
+     *         <td>是否在两个日期之间</td>
+     *     </tr>
+     *     <tr>
+     *         <td>.calc().pastSeconds() -> long</td>
+     *         <td>与当前日期相差秒数</td>
+     *     </tr>
+     *     <tr>
+     *         <td>.calc().pastSeconds(Date date) -> long</td>
+     *         <td>与传入日期相差秒数</td>
+     *     </tr>
+     *     <tr>
+     *         <td>.calc().pastMinutes() -> long</td>
+     *         <td>与当前日期相差分钟数</td>
+     *     </tr>
+     *     <tr>
+     *         <td>.calc().pastMinutes(Date date) -> long</td>
+     *         <td>与传入日期相差分钟数</td>
+     *     </tr>
+     *     <tr>
+     *         <td>.calc().pastHours() -> long</td>
+     *         <td>与当前日期相差小时数</td>
+     *     </tr>
+     *     <tr>
+     *         <td>.calc().pastHours(Date date) -> long</td>
+     *         <td>与传入日期相差小时数</td>
+     *     </tr>
+     *     <tr>
+     *         <td>.calc().pastDays() -> long</td>
+     *         <td>与当前日期相差天数</td>
+     *     </tr>
+     *     <tr>
+     *         <td>.calc().pastDays(Date date) -> long</td>
+     *         <td>与传入日期相差天数</td>
+     *     </tr>
+     *     <tr>
+     *         <td>.calc().pastMonths() -> long</td>
+     *         <td>与当前日期相差月数</td>
+     *     </tr>
+     *     <tr>
+     *         <td>.calc().pastMonths(Date date) -> long</td>
+     *         <td>与传入日期相差月数</td>
+     *     </tr>
+     *     <tr>
+     *         <td>.calc().pastYears() -> long</td>
+     *         <td>与当前日期相差年数</td>
+     *     </tr>
+     *     <tr>
+     *         <td>.calc().pastYears(Date date) -> long</td>
+     *         <td>与传入日期相差年数</td>
+     *     </tr>
+     *     <tr>
+     *         <td>.calc().past() -> String</td>
+     *         <td>与当前日期相差字符串详情</td>
+     *     </tr>
+     *     <tr>
+     *         <td>.calc().past(boolean isOmit) -> String</td>
+     *         <td>与当前日期相差字符串详情</td>
+     *     </tr>
+     *     <tr>
+     *         <td>.calc().past(Date date, boolean isOmit) -> String</td>
+     *         <td>与传入日期相差字符串详情</td>
+     *     </tr>
+     * </Table>
      */
     DateCalculate calc();
 }
