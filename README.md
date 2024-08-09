@@ -2,6 +2,16 @@
 DateTools是一个对时间或日期进行操作的工具类，提供了一系列的时间或日期的操作方法，支持链式调用。
 > DateTools是一个非线程安全的工具类
 ## 使用方法
+
+## 导入依赖
+```xml
+<dependency>
+    <groupId>io.github.lxf-sinksky</groupId>
+    <artifactId>datetools</artifactId>
+    <version>1.0</version>
+</dependency>
+```
+
 ### 创建一个时间：
 DateTools中的set()方法，提供了多种创建时间的方法。
 
