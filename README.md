@@ -32,19 +32,19 @@ DateTools中的set()方法，提供了多种创建时间的方法。
 Date date = DateTools.set().toDate();
 
 // 从字符串创建时间
-Date date = DateTools.set("2024-08-06","yyyy-MM-dd");
+Date date = DateTools.set("2024-08-06","yyyy-MM-dd").toDate();
 
 // 从常用的字符串创建时间也可以不设置pattern，工具类会从DatePattern类中查找适合的pattern进行匹配，只要是DatePattern记录过的，都可以自行适配，你也可以自行扩展。
-Date date = DateTools.set("2024-08-06");
-Date date = DateTools.set("2024-08-06 16:00:00");
+Date date = DateTools.set("2024-08-06").toDate();
+Date date = DateTools.set("2024-08-06 16:00:00").toDate();
 
 // 从时间戳创建时间
 Date date = DateTools.set(1722931937).toDate();
 
 // 更精细的方式创建时间
 Date date = DateTools.set(2024,08,06).toDate(); // 只设置日期，时分秒为0
-Date date = DateTools.set(2024,08,06,16,0,0); // 设置完整的时间，毫秒为0
-Date date = DateTools.set(2024,08,06,16,0,0,0); // 对毫秒的设置
+Date date = DateTools.set(2024,08,06,16,0,0).toDate(); // 设置完整的时间，毫秒为0
+Date date = DateTools.set(2024,08,06,16,0,0,0).toDate(); // 对毫秒的设置
 
 ```
 ### 输出时间：
